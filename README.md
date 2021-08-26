@@ -41,7 +41,7 @@ Here's the basic usage example:
 For more information on usage options:
 ```
  > python2 `qPyCR.py --help`
-```
+
  usage: qPyCR.py [-h] [-f FILENAME] [-i INDIR] [-o OUTDIR] [-n NORMALIZE]
                 [-w WEIGHT] [-c CYCLES]
 
