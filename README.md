@@ -29,9 +29,11 @@ To accomplish this each series is treated accordingly:
 # VISUAL EXAMPLE
 
 Before normalization:
+
 <img src="https://raw.githubusercontent.com/akettring/qPyCR/main/outfiles/example.csv_raw.png">
 
 After normaliztion:
+
 <img src="https://raw.githubusercontent.com/akettring/qPyCR/main/outfiles/example.csv_norm_limit.png">
 
 # REQUIREMENTS
