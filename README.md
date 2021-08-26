@@ -1,14 +1,11 @@
 # qPyCR
 Accurate analysis of qPCR data using global fitting
 
-qPyCR was developed based on the 2012 publication titled 
-'Robust Quantification of Polymerase Chain Reactions Using Global Fitting' 
-by Dr. Sean D. Moore and Anna Carr:
+qPyCR was developed based on the 2012 publication titled 'Robust Quantification of Polymerase Chain Reactions Using Global Fitting' by Dr. Sean D. Moore and Anna Carr:
 
 https://doi.org/10.1371/journal.pone.0037640
 
-The original software implementation of the global fitter was developed for 
-the University of Central Florida by Bioinformatics.org for online use and can be found here:
+The original software implementation of the global fitter was developed for the University of Central Florida by Bioinformatics.org for online use and can be found here:
 
 http://www.bioinformatics.org/ucfqpcr/
 
@@ -18,6 +15,7 @@ This version features an improvement in the fitting algorithm not described in t
 Each series is normalized in the range of [0,1] prior to calculating seed values.
 In theory, a series should never exceed 1, the maximum amount of PCR product.
 To accomplish this each series is treated accordingly:
+
 1. Fit the un-transformed "raw" series to estimate Kd, seed, and max.
 2. Estimate the limit that the series approaches by forward-casting 80-100 cycles.
 3. Use this limit value to set the maximum value for [0,1] transformation of the input data.
@@ -38,13 +36,20 @@ After normaliztion:
 
 # REQUIREMENTS
 
-qPyCR requires the installation of the Python modules: numpy, scipy, pandas, and matplotlib. We recommend using pip2 to obtain packages.
-
-Mac users should see this guide on Python installation, to obtain an updated release, separate from the default bundled installation.
+qPyCR requires the installation of the Python 2.7 and the following modules: numpy, scipy, pandas, and matplotlib.
 
 # INPUT
 
-qPyCR accepts '.csv' formatted fluorescence data from qPCR reactions. The .csv sheet should contain a 'Cycle' column. Subsequent reaction columns are grouped based on their headers. Column headers should be labeled as <Group>-<Sample>, without spaces or special characters. Example input data is provided with the source code.
+Example input data is provided with the source code.
+
+qPyCR accepts '.csv' formatted fluorescence data from qPCR reactions. 
+
+The .csv sheet should contain a 'Cycle' column. 
+
+Subsequent reaction columns are grouped based on their headers. 
+
+Column headers should be labeled as <Group>-<Sample>, without spaces or special characters. 
+
 
 # USAGE
 
