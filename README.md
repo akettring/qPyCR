@@ -7,14 +7,32 @@ by Dr. Sean D. Moore and Anna Carr:
 
 https://doi.org/10.1371/journal.pone.0037640
 
-
 The original software implementation of the global fitter was developed for 
 the University of Central Florida by Bioinformatics.org for online use and can be found here:
 
 http://www.bioinformatics.org/ucfqpcr/
 
-qPyCR is an open source (GPL) implementation written for Python 2.7 by Andrew Kettring.
+qPyCR is an open source (GPL) implementation written in Python 2.7 by Andrew Kettring.
 
+This version features an improvement in the fitting algorithm not described in the manuscript.
+Each series is normalized in the range of [0,1] prior to calculating seed values.
+In theory, a series should never exceed 1, the maximum amount of PCR product.
+To accomplish this each series is treated accordingly:
+1. Fit the un-transformed "raw" series to estimate Kd, seed, and max.
+2. Estimate the limit that the series approaches by forward-casting 80-100 cycles.
+3. Use this limit value to set the maximum value for [0,1] transformation of the input data.
+4. Re-fit the new transformed series. 
+5. Wave goodbye to error bars!
+
+
+
+# VISUAL EXAMPLE
+
+Before normalization:
+<sec="https://raw.githubusercontent.com/akettring/qPyCR/main/outfiles/example.csv_raw.png">
+
+After normaliztion:
+https://raw.githubusercontent.com/akettring/qPyCR/main/outfiles/example.csv_norm_limit.png
 
 # REQUIREMENTS
 
